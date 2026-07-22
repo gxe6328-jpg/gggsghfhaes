@@ -343,20 +343,27 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md rounded-3xl border border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-xs divide-y divide-brand-cream-dark/40 dark:divide-brand-cream-dark/20 overflow-hidden">
+            <div className="space-y-3">
               {helpCategories.map((cat, idx) => {
                 const isOpen = openHelpIdx === idx;
                 return (
-                  <div
+                  <motion.div
                     key={idx}
-                    className="scroll-mt-24 transition-colors duration-300 hover:bg-brand-cream-light/20"
+                    layout
+                    whileHover={{ scale: 1.015, y: -2 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                    className={`scroll-mt-24 bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md rounded-2xl border backdrop-blur-md transition-all duration-300 overflow-hidden hover:shadow-md ${
+                      isOpen 
+                        ? "border-brand-gold/60 shadow-sm" 
+                        : "border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-xs hover:border-brand-gold/40"
+                    }`}
                   >
                     <button
                       onClick={() => toggleHelp(idx)}
                       className="group w-full flex items-center justify-between p-4 text-left cursor-pointer select-none"
                     >
                       <h4 className="font-serif font-bold text-brand-slate text-sm sm:text-base flex items-center gap-2.5 pr-2">
-                        <span className="h-1.5 w-1.5 bg-brand-gold rounded-full shrink-0" />
+                        <span className={`h-1.5 w-1.5 rounded-full shrink-0 transition-all duration-300 ${isOpen ? "bg-brand-gold scale-125" : "bg-brand-gold/60 group-hover:bg-brand-gold"}`} />
                         {cat.title}
                       </h4>
                       <motion.div 
@@ -386,7 +393,7 @@ export default function App() {
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
@@ -585,20 +592,27 @@ export default function App() {
                   </h3>
                 </div>
                 
-                <div className="bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md rounded-3xl border border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-xs divide-y divide-brand-cream-dark/40 dark:divide-brand-cream-dark/20 overflow-hidden">
+                <div className="space-y-3.5">
                   {helpCategories.map((cat, idx) => {
                     const isOpen = openHelpIdx === idx;
                     return (
-                      <div
+                      <motion.div
                         key={idx}
-                        className="scroll-mt-28 transition-colors duration-300 hover:bg-brand-cream-light/20"
+                        layout
+                        whileHover={{ scale: 1.015, y: -2 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                        className={`scroll-mt-28 bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md rounded-2xl border transition-all duration-300 overflow-hidden hover:shadow-md ${
+                          isOpen 
+                            ? "border-brand-gold/60 shadow-sm" 
+                            : "border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-xs hover:border-brand-gold/40"
+                        }`}
                       >
                         <button
                           onClick={() => toggleHelp(idx)}
                           className="group w-full flex items-center justify-between p-4 text-left cursor-pointer select-none"
                         >
                           <h4 className="font-serif font-bold text-brand-slate text-base md:text-lg flex items-center gap-2.5 pr-2">
-                            <span className="h-1.5 w-1.5 bg-brand-gold rounded-full shrink-0" />
+                            <span className={`h-1.5 w-1.5 rounded-full shrink-0 transition-all duration-300 ${isOpen ? "bg-brand-gold scale-125" : "bg-brand-gold/60 group-hover:bg-brand-gold"}`} />
                             {cat.title}
                           </h4>
                           <motion.div 
@@ -628,7 +642,7 @@ export default function App() {
                             </motion.div>
                           )}
                         </AnimatePresence>
-                      </div>
+                      </motion.div>
                     );
                   })}
                 </div>

@@ -126,9 +126,16 @@ export default function Accordions() {
       {items.map((item) => {
         const isOpen = openId === item.id;
         return (
-          <div
+          <motion.div
             key={item.id}
-            className="scroll-mt-24 md:scroll-mt-28 border border-brand-cream-dark/60 dark:border-brand-cream-dark/25 rounded-2xl bg-brand-card-bg/60 dark:bg-brand-card-bg/40 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-brand-gold/50 hover:shadow-md"
+            layout
+            whileHover={{ scale: 1.015, y: -2 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className={`scroll-mt-24 md:scroll-mt-28 border rounded-2xl bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md overflow-hidden transition-all duration-300 hover:shadow-md ${
+              isOpen 
+                ? "border-brand-gold/60 shadow-sm" 
+                : "border-brand-cream-dark/60 dark:border-brand-cream-dark/25 hover:border-brand-gold/40"
+            }`}
           >
             <button
               onClick={() => toggle(item.id)}
@@ -136,7 +143,9 @@ export default function Accordions() {
               id={`accordion-btn-${item.id}`}
             >
               <div className="flex items-center gap-3">
-                {item.icon}
+                <div className="p-1.5 bg-brand-gold/10 rounded-lg shrink-0 flex items-center justify-center">
+                  {item.icon}
+                </div>
                 <span className="font-serif font-bold text-xs tracking-wider text-brand-slate">
                   {item.title}
                 </span>
@@ -169,7 +178,7 @@ export default function Accordions() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         );
       })}
     </div>
