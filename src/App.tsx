@@ -217,10 +217,10 @@ export default function App() {
         style={{ scaleX }}
       />
 
-      {/* Liquid Glass Background Blur Blobs */}
-      <div className="absolute top-[10%] left-[-15%] w-[320px] md:w-[600px] h-[320px] md:h-[600px] bg-brand-gold/8 dark:bg-brand-gold/5 rounded-full blur-[70px] md:blur-[130px] pointer-events-none z-0" />
-      <div className="absolute bottom-[20%] right-[-15%] w-[350px] md:w-[700px] h-[350px] md:h-[700px] bg-brand-sage/6 dark:bg-brand-gold/4 rounded-full blur-[80px] md:blur-[150px] pointer-events-none z-0" />
-      <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-cream-dark/10 dark:bg-brand-cream-dark/4 rounded-full blur-[90px] pointer-events-none z-0" />
+      {/* Liquid Glass Background Ambient Mesh */}
+      <div className="absolute top-[8%] left-[-15%] w-[340px] md:w-[650px] h-[340px] md:h-[650px] bg-brand-gold/14 dark:bg-brand-gold/10 rounded-full blur-[75px] md:blur-[135px] pointer-events-none z-0 animate-apple-float-1" />
+      <div className="absolute bottom-[18%] right-[-15%] w-[360px] md:w-[720px] h-[360px] md:h-[720px] bg-brand-sage/12 dark:bg-brand-gold/8 rounded-full blur-[85px] md:blur-[155px] pointer-events-none z-0 animate-apple-float-2" />
+      <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[550px] h-[300px] md:h-[550px] bg-brand-cream-dark/25 dark:bg-brand-cream-dark/10 rounded-full blur-[95px] pointer-events-none z-0" />
 
       {/* Interactive Cursor Background Distortion Effect */}
       <CursorBackgroundEffect />
@@ -244,7 +244,7 @@ export default function App() {
           <button
             onClick={toggleTheme}
             aria-label="Переключить тему оформления"
-            className="p-2.5 bg-brand-card-bg/60 dark:bg-brand-card-bg/40 backdrop-blur-md hover:bg-brand-btn-hover-bg text-brand-slate/70 hover:text-brand-gold rounded-full border border-brand-btn-border hover:border-brand-gold/30 transition-all duration-300 shadow-xs cursor-pointer flex items-center justify-center focus:outline-hidden"
+            className="p-2.5 apple-glass-button text-brand-slate/80 hover:text-brand-gold rounded-full cursor-pointer flex items-center justify-center focus:outline-hidden"
           >
             {theme === "dark" ? (
               <Sun className="h-4.5 w-4.5" />
@@ -293,9 +293,9 @@ export default function App() {
             href="https://app2.sqns.ru/booking/booking?orgid=8780#/employees"
             target="_blank"
             rel="noreferrer"
-            className="w-full bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-gold/15 text-brand-slate py-4.5 px-5 rounded-2xl border-2 border-brand-gold/70 hover:border-brand-gold transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group"
+            className="w-full apple-glass-primary py-4.5 px-5 rounded-2xl active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group"
           >
-            <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 dark:via-white/5 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000" />
+            <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/25 dark:via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000" />
             <span className="text-xs uppercase tracking-[0.15em] font-extrabold text-brand-slate flex items-center gap-1.5 drop-shadow-xs">
               ЗАПИСЬ НА ПРИЕМ
             </span>
@@ -309,7 +309,7 @@ export default function App() {
             href="https://vk.ru/good_psihika"
             target="_blank"
             rel="noreferrer"
-            className="w-full bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-btn-hover-bg text-brand-slate font-sans py-4 px-6 rounded-2xl border border-brand-btn-border hover:border-brand-gold/40 transition-all duration-300 shadow-xs hover:shadow-md hover:scale-[1.01] active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer"
+            className="w-full apple-glass-button text-brand-slate font-sans py-4 px-6 rounded-2xl active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer"
           >
             <span className="text-xs uppercase tracking-[0.15em] font-bold text-brand-slate flex items-center gap-2">
               <img src={vkLogo} className="h-5.5 w-5.5 object-contain logo-brighten" alt="VK" /> СВЯЗАТЬСЯ В ВКОНТАКТЕ
@@ -319,7 +319,7 @@ export default function App() {
 
           <button
             onClick={triggerBlockedToast}
-            className="w-full bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-btn-hover-bg text-brand-slate/60 font-sans py-4 px-6 rounded-2xl border border-brand-btn-border/80 transition-all duration-300 shadow-xs text-center flex flex-col items-center justify-center cursor-pointer relative"
+            className="w-full apple-glass-button text-brand-slate/60 font-sans py-4 px-6 rounded-2xl text-center flex flex-col items-center justify-center cursor-pointer relative"
           >
             <span className="text-xs uppercase tracking-[0.15em] font-bold flex items-center gap-2">
               <img src={maxLogo} className="h-4.5 w-4.5 object-contain rounded-md opacity-60 logo-brighten" alt="Max" /> 
@@ -335,9 +335,8 @@ export default function App() {
 
         {/* Accordions and Information list */}
         <div className="px-6 space-y-6 flex-1">
-          <ScrollAnimate className="space-y-6 relative overflow-hidden" data-section="mobile-help">
-            <InteractiveBackgroundWord text="PSY" className="absolute -right-4 -top-6 text-[7rem] leading-none" />
-            <div className="flex items-center gap-3 relative z-10">
+          <ScrollAnimate className="space-y-6" data-section="mobile-help">
+            <div className="flex items-center gap-3">
               <div className="p-2.5 bg-brand-cream/50 text-brand-gold rounded-xl">
                 <ShieldCheck className="h-5 w-5" />
               </div>
@@ -358,10 +357,8 @@ export default function App() {
                     layout
                     whileHover={{ scale: 1.015, y: -2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className={`scroll-mt-24 bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md rounded-2xl border backdrop-blur-md transition-all duration-300 overflow-hidden hover:shadow-md ${
-                      isOpen 
-                        ? "border-brand-gold/60 shadow-sm" 
-                        : "border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-xs hover:border-brand-gold/40"
+                    className={`scroll-mt-24 apple-glass-card rounded-2xl overflow-hidden transition-all duration-300 ${
+                      isOpen ? "ring-1 ring-brand-gold/60" : ""
                     }`}
                   >
                     <button
@@ -408,8 +405,7 @@ export default function App() {
           {/* Heart Rate / ECG divider */}
           <PulseDivider className="py-2" />
 
-          <ScrollAnimate data-section="mobile-info" className="relative overflow-hidden">
-            <InteractiveBackgroundWord text="MIND" className="absolute -left-4 top-4 text-[7rem] leading-none" />
+          <ScrollAnimate data-section="mobile-info">
             <Accordions />
           </ScrollAnimate>
 
@@ -417,9 +413,8 @@ export default function App() {
           <PulseDivider className="py-2" />
 
           {/* Contacts and Locations section on mobile */}
-          <ScrollAnimate className="space-y-4 relative overflow-hidden" data-section="mobile-addresses">
-            <InteractiveBackgroundWord text="CALM" className="absolute -right-4 -top-4 text-[6.5rem] leading-none" />
-            <div className="flex items-center gap-3 relative z-10">
+          <ScrollAnimate className="space-y-4" data-section="mobile-addresses">
+            <div className="flex items-center gap-3">
               <div className="p-2.5 bg-brand-cream/50 text-brand-gold rounded-xl">
                 <MapPin className="h-5 w-5" />
               </div>
@@ -431,7 +426,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md p-5 rounded-3xl border border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-xs space-y-4 text-left">
+            <div className="apple-glass-card p-5 rounded-3xl space-y-4 text-left">
               <div className="space-y-3.5">
                 <div className="flex gap-3 text-xs text-brand-slate/85">
                   <MapPin className="h-4.5 w-4.5 text-brand-gold shrink-0 mt-0.5" />
@@ -457,7 +452,7 @@ export default function App() {
         <div className="px-6 py-8 mt-10 border-t border-brand-cream-dark/40 space-y-6 bg-brand-cream-light/50 text-center">
           <button
             onClick={handleShare}
-            className="w-full py-3 bg-brand-card-bg hover:bg-brand-cream-light text-brand-slate/80 text-xs font-semibold rounded-xl border border-brand-cream-dark/50 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+            className="w-full py-3.5 apple-glass-button text-brand-slate/80 text-xs font-semibold rounded-xl flex items-center justify-center gap-2 cursor-pointer"
           >
             <Share2 className="h-4 w-4" />
             <span>{shared ? "Ссылка скопирована!" : "Поделиться визиткой"}</span>
@@ -476,7 +471,7 @@ export default function App() {
       <div className="hidden lg:flex flex-col min-h-screen">
         
         {/* Desktop Header */}
-        <header className="w-full bg-brand-card-bg/60 dark:bg-brand-card-bg/40 backdrop-blur-md border-b border-brand-cream-dark/45 dark:border-brand-cream-dark/20 sticky top-0 z-40 px-4 py-5">
+        <header className="w-full apple-glass sticky top-0 z-40 px-4 py-4.5">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 bg-brand-slate text-brand-cream rounded-xl flex items-center justify-center font-serif text-xl font-bold border border-brand-gold/30 shadow-sm">
@@ -497,14 +492,14 @@ export default function App() {
                 href="https://vk.ru/good_psihika"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-btn-hover-bg text-brand-slate text-xs font-semibold px-4 py-2.5 rounded-xl border border-brand-btn-border hover:border-brand-gold/45 hover:scale-[1.02] active:scale-95 hover:shadow-xs transition-all duration-300 flex items-center gap-2 cursor-pointer"
+                className="apple-glass-button text-brand-slate text-xs font-semibold px-4 py-2.5 rounded-xl active:scale-95 flex items-center gap-2 cursor-pointer"
               >
                 <img src={vkLogo} className="h-5.5 w-5.5 object-contain logo-brighten" alt="VK" />
                 <span>ВКонтакте</span>
               </a>
               <button
                 onClick={triggerBlockedToast}
-                className="bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-btn-hover-bg text-brand-slate/60 text-xs font-semibold px-4 py-2.5 rounded-xl border border-brand-btn-border/80 transition-all duration-300 flex items-center gap-2 cursor-pointer relative"
+                className="apple-glass-button text-brand-slate/60 text-xs font-semibold px-4 py-2.5 rounded-xl flex items-center gap-2 cursor-pointer relative"
               >
                 <img src={maxLogo} className="h-4.5 w-4.5 object-contain rounded-sm opacity-60 logo-brighten" alt="Max" />
                 <span>Мессенджер МАКС</span>
@@ -513,7 +508,7 @@ export default function App() {
               <button
                 onClick={toggleTheme}
                 aria-label="Переключить тему оформления"
-                className="bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-btn-hover-bg text-brand-slate/80 hover:text-brand-gold p-2.5 rounded-xl border border-brand-btn-border hover:border-brand-gold/45 hover:scale-[1.05] active:scale-95 transition-all duration-300 flex items-center justify-center cursor-pointer shadow-xs focus:outline-hidden"
+                className="apple-glass-button text-brand-slate/80 hover:text-brand-gold p-2.5 rounded-xl active:scale-95 flex items-center justify-center cursor-pointer focus:outline-hidden"
               >
                 {theme === "dark" ? (
                   <Sun className="h-4.5 w-4.5" />
@@ -555,7 +550,7 @@ export default function App() {
             {/* Credentials Row */}
             <ScrollAnimate delay={0.1}>
               <section className="grid grid-cols-3 gap-4">
-                <div className="bg-brand-card-bg/60 dark:bg-brand-card-bg/40 backdrop-blur-md p-5 rounded-2xl border border-brand-cream-dark/50 dark:border-brand-cream-dark/25 shadow-xs flex items-center gap-3.5 hover:border-brand-gold/40 hover:shadow-sm transition-all duration-300">
+                <div className="apple-glass-card p-5 rounded-2xl flex items-center gap-3.5 hover:scale-[1.02]">
                   <div className="p-2.5 bg-brand-cream/50 text-brand-gold rounded-xl">
                     <Award className="h-5 w-5" />
                   </div>
@@ -565,7 +560,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="bg-brand-card-bg/60 dark:bg-brand-card-bg/40 backdrop-blur-md p-5 rounded-2xl border border-brand-cream-dark/50 dark:border-brand-cream-dark/25 shadow-xs flex items-center gap-3.5 hover:border-brand-gold/40 hover:shadow-sm transition-all duration-300">
+                <div className="apple-glass-card p-5 rounded-2xl flex items-center gap-3.5 hover:scale-[1.02]">
                   <div className="p-2.5 bg-brand-cream/50 text-brand-gold rounded-xl">
                     <BookOpen className="h-5 w-5" />
                   </div>
@@ -575,7 +570,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="bg-brand-card-bg/60 dark:bg-brand-card-bg/40 backdrop-blur-md p-5 rounded-2xl border border-brand-cream-dark/50 dark:border-brand-cream-dark/25 shadow-xs flex items-center gap-3.5 hover:border-brand-gold/40 hover:shadow-sm transition-all duration-300">
+                <div className="apple-glass-card p-5 rounded-2xl flex items-center gap-3.5 hover:scale-[1.02]">
                   <div className="p-2.5 bg-brand-cream/50 text-brand-gold rounded-xl">
                     <ShieldCheck className="h-5 w-5" />
                   </div>
@@ -592,16 +587,15 @@ export default function App() {
 
             {/* Who and How section */}
             <ScrollAnimate className="space-y-4" data-section="desktop-help">
-              <section className="space-y-4 relative overflow-hidden">
-                <InteractiveBackgroundWord text="LOGOS" className="absolute -right-6 top-8 text-[10rem] leading-none" />
-                <div className="flex items-center gap-2 relative z-10">
+              <section className="space-y-4">
+                <div className="flex items-center gap-2">
                   <div className="h-2 w-2 bg-brand-gold rounded-full" />
                   <h3 className="font-serif text-xl font-bold text-brand-slate">
                     Кому и с чем я помогу
                   </h3>
                 </div>
                 
-                <div className="space-y-3.5 relative z-10">
+                <div className="space-y-3.5">
                   {helpCategories.map((cat, idx) => {
                     const isOpen = openHelpIdx === idx;
                     return (
@@ -610,10 +604,8 @@ export default function App() {
                         layout
                         whileHover={{ scale: 1.015, y: -2 }}
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                        className={`scroll-mt-28 bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md rounded-2xl border transition-all duration-300 overflow-hidden hover:shadow-md ${
-                          isOpen 
-                            ? "border-brand-gold/60 shadow-sm" 
-                            : "border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-xs hover:border-brand-gold/40"
+                        className={`scroll-mt-28 apple-glass-card rounded-2xl overflow-hidden transition-all duration-300 ${
+                          isOpen ? "ring-1 ring-brand-gold/60" : ""
                         }`}
                       >
                         <button
@@ -663,17 +655,14 @@ export default function App() {
 
             {/* Accordions */}
             <ScrollAnimate className="space-y-4" data-section="desktop-info">
-              <section className="space-y-4 relative overflow-hidden">
-                <InteractiveBackgroundWord text="MIND" className="absolute -left-6 top-8 text-[10rem] leading-none" />
-                <div className="flex items-center gap-2 relative z-10">
+              <section className="space-y-4">
+                <div className="flex items-center gap-2">
                   <div className="h-2 w-2 bg-brand-gold rounded-full" />
                   <h3 className="font-serif text-xl font-bold text-brand-slate">
                     Информация о специалисте
                   </h3>
                 </div>
-                <div className="relative z-10">
-                  <Accordions />
-                </div>
+                <Accordions />
               </section>
             </ScrollAnimate>
           </div>
@@ -682,15 +671,14 @@ export default function App() {
           <div className="col-span-5 sticky top-28 space-y-8 flex flex-col items-stretch">
             
             {/* Portrait Card (Scaled Down) */}
-            <div className="flex justify-center relative">
-              <InteractiveBackgroundWord text="ANIMA" className="absolute -left-12 -top-8 text-[9rem] leading-none" />
+            <div className="flex justify-center">
               <button
                 onClick={() => {
                   setIsImageOpen(true);
                   setZoomLevel(1);
                 }}
                 aria-label="Просмотреть фото врача"
-                className="relative w-56 h-56 bg-brand-cream rounded-full border-4 border-brand-card-bg shadow-lg overflow-hidden group cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-brand-gold z-10"
+                className="relative w-56 h-56 bg-brand-cream rounded-full border-4 border-brand-card-bg shadow-lg overflow-hidden group cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-brand-gold"
               >
                 <img
                   src={pavelPortrait}
@@ -706,7 +694,7 @@ export default function App() {
             </div>
 
             {/* Contact Panel */}
-            <div className="bg-brand-card-bg/55 dark:bg-brand-card-bg/40 backdrop-blur-md p-6 rounded-3xl border border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-md hover:shadow-lg transition-all duration-300 space-y-4" data-section="desktop-booking">
+            <div className="apple-glass-card p-6 rounded-3xl space-y-4" data-section="desktop-booking">
               <h4 className="font-serif text-lg font-bold text-brand-slate">
                 Контакты и запись на прием
               </h4>
@@ -715,9 +703,9 @@ export default function App() {
                 href="https://app2.sqns.ru/booking/booking?orgid=8780#/employees"
                 target="_blank"
                 rel="noreferrer"
-                className="w-full bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-gold/15 text-brand-slate py-4.5 px-6 rounded-2xl border-2 border-brand-gold/70 hover:border-brand-gold transition-all duration-300 shadow-md hover:shadow-lg active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer group relative overflow-hidden"
+                className="w-full apple-glass-primary py-4.5 px-6 rounded-2xl active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer group relative overflow-hidden"
               >
-                <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 dark:via-white/5 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000" />
+                <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/25 dark:via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000" />
                 <span className="text-xs uppercase font-sans tracking-[0.15em] font-extrabold text-brand-slate">ЗАПИСАТЬСЯ НА ПРИЕМ</span>
                 <span className="text-[10px] text-brand-gold-dark mt-1 font-semibold uppercase tracking-wider font-sans">Клиника на Пирогова (г. Щёкино)</span>
               </a>
@@ -727,14 +715,14 @@ export default function App() {
                   href="https://vk.ru/good_psihika"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-btn-hover-bg/85 text-brand-slate text-xs font-semibold py-3.5 px-4 rounded-xl border border-brand-btn-border hover:border-brand-gold/45 transition-all duration-300 hover:scale-[1.02] active:scale-95 text-center flex flex-col items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                  className="apple-glass-button text-brand-slate text-xs font-semibold py-3.5 px-4 rounded-xl active:scale-95 text-center flex flex-col items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <img src={vkLogo} className="h-6 w-6 object-contain logo-brighten" alt="VK" />
                   <span className="tracking-wider uppercase text-[10px]">МОЙ ВКОНТАКТЕ</span>
                 </a>
                 <button
                   onClick={triggerBlockedToast}
-                  className="bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md hover:bg-brand-btn-hover-bg/85 text-brand-slate/60 text-xs font-semibold py-3.5 px-4 rounded-xl border border-brand-btn-border/80 transition-all duration-300 text-center flex flex-col items-center justify-center gap-1.5 cursor-pointer shadow-xs relative"
+                  className="apple-glass-button text-brand-slate/60 text-xs font-semibold py-3.5 px-4 rounded-xl text-center flex flex-col items-center justify-center gap-1.5 cursor-pointer relative"
                 >
                   <img src={maxLogo} className="h-5 w-5 object-contain rounded-sm opacity-60 logo-brighten" alt="Max" />
                   <span className="tracking-wider uppercase text-[10px] flex items-center gap-1 justify-center">
@@ -746,7 +734,7 @@ export default function App() {
 
               <button
                 onClick={handleShare}
-                className="w-full py-3 bg-brand-cream/40 text-brand-slate/70 hover:text-brand-slate hover:bg-brand-cream-dark/30 text-xs font-semibold rounded-xl border border-brand-cream-dark/50 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                className="w-full py-3 apple-glass-button text-brand-slate/80 text-xs font-semibold rounded-xl flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Share2 className="h-4 w-4" />
                 <span>{shared ? "Ссылка скопирована!" : "Поделиться контактом"}</span>
@@ -754,13 +742,12 @@ export default function App() {
             </div>
 
             {/* Principles of Work Card */}
-            <div className="bg-brand-card-bg/55 dark:bg-brand-card-bg/40 backdrop-blur-md p-6 rounded-3xl border border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-md hover:shadow-lg transition-all duration-300 space-y-4 relative overflow-hidden" data-section="desktop-principles">
-              <InteractiveBackgroundWord text="CALM" className="absolute -right-4 -bottom-6 text-[8rem] leading-none" />
-              <h4 className="font-serif text-lg font-bold text-brand-slate flex items-center gap-2.5 relative z-10">
+            <div className="apple-glass-card p-6 rounded-3xl space-y-4" data-section="desktop-principles">
+              <h4 className="font-serif text-lg font-bold text-brand-slate flex items-center gap-2.5">
                 <ShieldCheck className="h-5 w-5 text-brand-gold" />
                 <span>Принципы моей работы</span>
               </h4>
-              <div className="space-y-4 text-left relative z-10">
+              <div className="space-y-4 text-left">
                 <div className="space-y-1">
                   <span className="text-xs font-bold text-brand-slate flex items-center gap-2 font-serif">
                     <span className="h-1.5 w-1.5 bg-brand-gold rounded-full shrink-0" />
@@ -795,9 +782,8 @@ export default function App() {
         </main>
 
         {/* Desktop Footer */}
-        <footer className="w-full bg-brand-slate text-brand-cream-light py-10 mt-16 border-t border-brand-gold/20 px-4 relative overflow-hidden">
-          <InteractiveBackgroundWord text="HARMONY" className="absolute right-6 -top-6 text-[11rem] leading-none" />
-          <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8 relative z-10">
+        <footer className="w-full bg-brand-slate text-brand-cream-light py-10 mt-16 border-t border-brand-gold/20 px-4">
+          <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <div className="h-8 w-8 bg-brand-cream text-brand-slate rounded-lg flex items-center justify-center font-serif text-base font-bold">

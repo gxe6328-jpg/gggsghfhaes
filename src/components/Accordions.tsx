@@ -131,10 +131,8 @@ export default function Accordions() {
             layout
             whileHover={{ scale: 1.015, y: -2 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className={`scroll-mt-24 md:scroll-mt-28 border rounded-2xl bg-brand-card-bg/65 dark:bg-brand-card-bg/45 backdrop-blur-md overflow-hidden transition-all duration-300 hover:shadow-md ${
-              isOpen 
-                ? "border-brand-gold/60 shadow-sm" 
-                : "border-brand-cream-dark/60 dark:border-brand-cream-dark/25 hover:border-brand-gold/40"
+            className={`scroll-mt-24 md:scroll-mt-28 apple-glass-card rounded-2xl overflow-hidden transition-all duration-300 ${
+              isOpen ? "ring-1 ring-brand-gold/60" : ""
             }`}
           >
             <button
