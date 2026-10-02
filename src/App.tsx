@@ -21,6 +21,8 @@ import {
 import Accordions from "./components/Accordions";
 import AnimatedToggleIcon from "./components/AnimatedToggleIcon";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import CursorBackgroundEffect from "./components/CursorBackgroundEffect";
+import InteractiveBackgroundWord from "./components/InteractiveBackgroundWord";
 
 import pavelPortrait from "./assets/images/pavel_photo_latest.jpg";
 import vkLogo from "./assets/images/icons8-vk-48.png";
@@ -220,6 +222,9 @@ export default function App() {
       <div className="absolute bottom-[20%] right-[-15%] w-[350px] md:w-[700px] h-[350px] md:h-[700px] bg-brand-sage/6 dark:bg-brand-gold/4 rounded-full blur-[80px] md:blur-[150px] pointer-events-none z-0" />
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-cream-dark/10 dark:bg-brand-cream-dark/4 rounded-full blur-[90px] pointer-events-none z-0" />
 
+      {/* Interactive Cursor Background Distortion Effect */}
+      <CursorBackgroundEffect />
+
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -330,8 +335,9 @@ export default function App() {
 
         {/* Accordions and Information list */}
         <div className="px-6 space-y-6 flex-1">
-          <ScrollAnimate className="space-y-6" data-section="mobile-help">
-            <div className="flex items-center gap-3">
+          <ScrollAnimate className="space-y-6 relative overflow-hidden" data-section="mobile-help">
+            <InteractiveBackgroundWord text="PSY" className="absolute -right-4 -top-6 text-[7rem] leading-none" />
+            <div className="flex items-center gap-3 relative z-10">
               <div className="p-2.5 bg-brand-cream/50 text-brand-gold rounded-xl">
                 <ShieldCheck className="h-5 w-5" />
               </div>
@@ -402,7 +408,8 @@ export default function App() {
           {/* Heart Rate / ECG divider */}
           <PulseDivider className="py-2" />
 
-          <ScrollAnimate data-section="mobile-info">
+          <ScrollAnimate data-section="mobile-info" className="relative overflow-hidden">
+            <InteractiveBackgroundWord text="MIND" className="absolute -left-4 top-4 text-[7rem] leading-none" />
             <Accordions />
           </ScrollAnimate>
 
@@ -410,8 +417,9 @@ export default function App() {
           <PulseDivider className="py-2" />
 
           {/* Contacts and Locations section on mobile */}
-          <ScrollAnimate className="space-y-4" data-section="mobile-addresses">
-            <div className="flex items-center gap-3">
+          <ScrollAnimate className="space-y-4 relative overflow-hidden" data-section="mobile-addresses">
+            <InteractiveBackgroundWord text="CALM" className="absolute -right-4 -top-4 text-[6.5rem] leading-none" />
+            <div className="flex items-center gap-3 relative z-10">
               <div className="p-2.5 bg-brand-cream/50 text-brand-gold rounded-xl">
                 <MapPin className="h-5 w-5" />
               </div>
@@ -523,7 +531,7 @@ export default function App() {
           {/* Left Column (7 cols) */}
           <div className="col-span-7 space-y-8">
             <section className="space-y-6 relative overflow-hidden">
-              <div className="absolute -left-8 -top-12 text-[12rem] font-serif text-brand-slate/[0.03] pointer-events-none select-none">PSY</div>
+              <InteractiveBackgroundWord text="PSY" className="absolute -left-8 -top-12 text-[12rem] leading-none" />
               <div className="flex flex-col">
                 <span className="text-[11px] uppercase tracking-[0.3em] font-bold text-brand-gold-dark/70 mb-2">Научно обоснованная психотерапия</span>
                 <h2 className="font-serif text-8xl text-brand-slate leading-[0.85] tracking-tighter mb-4">
@@ -584,15 +592,16 @@ export default function App() {
 
             {/* Who and How section */}
             <ScrollAnimate className="space-y-4" data-section="desktop-help">
-              <section className="space-y-4">
-                <div className="flex items-center gap-2">
+              <section className="space-y-4 relative overflow-hidden">
+                <InteractiveBackgroundWord text="LOGOS" className="absolute -right-6 top-8 text-[10rem] leading-none" />
+                <div className="flex items-center gap-2 relative z-10">
                   <div className="h-2 w-2 bg-brand-gold rounded-full" />
                   <h3 className="font-serif text-xl font-bold text-brand-slate">
                     Кому и с чем я помогу
                   </h3>
                 </div>
                 
-                <div className="space-y-3.5">
+                <div className="space-y-3.5 relative z-10">
                   {helpCategories.map((cat, idx) => {
                     const isOpen = openHelpIdx === idx;
                     return (
@@ -654,14 +663,17 @@ export default function App() {
 
             {/* Accordions */}
             <ScrollAnimate className="space-y-4" data-section="desktop-info">
-              <section className="space-y-4">
-                <div className="flex items-center gap-2">
+              <section className="space-y-4 relative overflow-hidden">
+                <InteractiveBackgroundWord text="MIND" className="absolute -left-6 top-8 text-[10rem] leading-none" />
+                <div className="flex items-center gap-2 relative z-10">
                   <div className="h-2 w-2 bg-brand-gold rounded-full" />
                   <h3 className="font-serif text-xl font-bold text-brand-slate">
                     Информация о специалисте
                   </h3>
                 </div>
-                <Accordions />
+                <div className="relative z-10">
+                  <Accordions />
+                </div>
               </section>
             </ScrollAnimate>
           </div>
@@ -670,14 +682,15 @@ export default function App() {
           <div className="col-span-5 sticky top-28 space-y-8 flex flex-col items-stretch">
             
             {/* Portrait Card (Scaled Down) */}
-            <div className="flex justify-center">
+            <div className="flex justify-center relative">
+              <InteractiveBackgroundWord text="ANIMA" className="absolute -left-12 -top-8 text-[9rem] leading-none" />
               <button
                 onClick={() => {
                   setIsImageOpen(true);
                   setZoomLevel(1);
                 }}
                 aria-label="Просмотреть фото врача"
-                className="relative w-56 h-56 bg-brand-cream rounded-full border-4 border-brand-card-bg shadow-lg overflow-hidden group cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-brand-gold"
+                className="relative w-56 h-56 bg-brand-cream rounded-full border-4 border-brand-card-bg shadow-lg overflow-hidden group cursor-pointer hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-brand-gold z-10"
               >
                 <img
                   src={pavelPortrait}
@@ -741,12 +754,13 @@ export default function App() {
             </div>
 
             {/* Principles of Work Card */}
-            <div className="bg-brand-card-bg/55 dark:bg-brand-card-bg/40 backdrop-blur-md p-6 rounded-3xl border border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-md hover:shadow-lg transition-all duration-300 space-y-4" data-section="desktop-principles">
-              <h4 className="font-serif text-lg font-bold text-brand-slate flex items-center gap-2.5">
+            <div className="bg-brand-card-bg/55 dark:bg-brand-card-bg/40 backdrop-blur-md p-6 rounded-3xl border border-brand-cream-dark/60 dark:border-brand-cream-dark/25 shadow-md hover:shadow-lg transition-all duration-300 space-y-4 relative overflow-hidden" data-section="desktop-principles">
+              <InteractiveBackgroundWord text="CALM" className="absolute -right-4 -bottom-6 text-[8rem] leading-none" />
+              <h4 className="font-serif text-lg font-bold text-brand-slate flex items-center gap-2.5 relative z-10">
                 <ShieldCheck className="h-5 w-5 text-brand-gold" />
                 <span>Принципы моей работы</span>
               </h4>
-              <div className="space-y-4 text-left">
+              <div className="space-y-4 text-left relative z-10">
                 <div className="space-y-1">
                   <span className="text-xs font-bold text-brand-slate flex items-center gap-2 font-serif">
                     <span className="h-1.5 w-1.5 bg-brand-gold rounded-full shrink-0" />
@@ -781,8 +795,9 @@ export default function App() {
         </main>
 
         {/* Desktop Footer */}
-        <footer className="w-full bg-brand-slate text-brand-cream-light py-10 mt-16 border-t border-brand-gold/20 px-4">
-          <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8">
+        <footer className="w-full bg-brand-slate text-brand-cream-light py-10 mt-16 border-t border-brand-gold/20 px-4 relative overflow-hidden">
+          <InteractiveBackgroundWord text="HARMONY" className="absolute right-6 -top-6 text-[11rem] leading-none" />
+          <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8 relative z-10">
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <div className="h-8 w-8 bg-brand-cream text-brand-slate rounded-lg flex items-center justify-center font-serif text-base font-bold">

@@ -37,10 +37,10 @@ export default function ScrollToTopButton() {
         >
           <button
             onClick={scrollToTop}
-            className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white/80 backdrop-blur-md hover:bg-white text-brand-slate flex items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-brand-slate/10 transition-all active:scale-95"
+            className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-brand-card-bg/80 dark:bg-brand-card-bg/70 backdrop-blur-md hover:bg-brand-card-bg dark:hover:bg-brand-cream-dark/50 text-brand-slate/80 hover:text-brand-gold border border-brand-btn-border dark:border-brand-gold/30 hover:border-brand-gold/50 flex items-center justify-center shadow-md dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 active:scale-95 cursor-pointer focus:outline-hidden group"
             aria-label="Наверх"
           >
-            <ArrowUp className="h-5 w-5 lg:h-6 lg:w-6" />
+            <ArrowUp className="h-5 w-5 lg:h-6 lg:w-6 transition-transform duration-300 group-hover:-translate-y-0.5" />
           </button>
         </motion.div>
       )}
