@@ -28,6 +28,18 @@ import pavelPortrait from "./assets/images/pavel_photo_latest.jpg";
 import vkLogo from "./assets/images/icons8-vk-48.png";
 import maxLogo from "./assets/images/Max_logo_2025.png";
 
+declare global {
+  interface Window {
+    ym?: (counterId: number, action: string, targetName?: string, params?: Record<string, unknown>) => void;
+  }
+}
+
+const sendYmGoal = (goalName: string) => {
+  if (typeof window !== "undefined" && typeof window.ym === "function") {
+    window.ym(113325765, "reachGoal", goalName);
+  }
+};
+
 const helpCategories = [
   {
     title: "Депрессивные состояния",
@@ -196,6 +208,7 @@ export default function App() {
   };
 
   const handleShare = () => {
+    sendYmGoal("share_click");
     if (navigator.share) {
       navigator.share({
         title: "Психотерапевт Павел Веляев",
@@ -293,6 +306,7 @@ export default function App() {
             href="https://app2.sqns.ru/booking/booking?orgid=8780#/employees"
             target="_blank"
             rel="noreferrer"
+            onClick={() => sendYmGoal("booking_click")}
             className="w-full apple-glass-primary py-4.5 px-5 rounded-2xl active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer relative overflow-hidden group"
           >
             <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/25 dark:via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000" />
@@ -309,6 +323,7 @@ export default function App() {
             href="https://vk.ru/good_psihika"
             target="_blank"
             rel="noreferrer"
+            onClick={() => sendYmGoal("vk_click")}
             className="w-full apple-glass-button text-brand-slate font-sans py-4 px-6 rounded-2xl active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer"
           >
             <span className="text-xs uppercase tracking-[0.15em] font-bold text-brand-slate flex items-center gap-2">
@@ -492,6 +507,7 @@ export default function App() {
                 href="https://vk.ru/good_psihika"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => sendYmGoal("vk_click")}
                 className="apple-glass-button text-brand-slate text-xs font-semibold px-4 py-2.5 rounded-xl active:scale-95 flex items-center gap-2 cursor-pointer"
               >
                 <img src={vkLogo} className="h-5.5 w-5.5 object-contain logo-brighten" alt="VK" />
@@ -703,6 +719,7 @@ export default function App() {
                 href="https://app2.sqns.ru/booking/booking?orgid=8780#/employees"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => sendYmGoal("booking_click")}
                 className="w-full apple-glass-primary py-4.5 px-6 rounded-2xl active:scale-[0.98] text-center flex flex-col items-center justify-center cursor-pointer group relative overflow-hidden"
               >
                 <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/25 dark:via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000" />
@@ -715,6 +732,7 @@ export default function App() {
                   href="https://vk.ru/good_psihika"
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => sendYmGoal("vk_click")}
                   className="apple-glass-button text-brand-slate text-xs font-semibold py-3.5 px-4 rounded-xl active:scale-95 text-center flex flex-col items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <img src={vkLogo} className="h-6 w-6 object-contain logo-brighten" alt="VK" />
